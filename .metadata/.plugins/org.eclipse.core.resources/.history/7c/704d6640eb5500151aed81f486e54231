@@ -1,0 +1,40 @@
+package ahu;
+
+import java.util.Scanner;
+
+/**
+ * 
+ * @tag:配对
+ * @Num:N_711.java
+ * @author hijj
+ * Create at: 2015年9月8日 下午12:54:27
+ */
+public class N_711 {
+	public static void main(String[] args){
+		Scanner cin=new Scanner(System.in);
+		while(cin.hasNextInt()){
+			int n=cin.nextInt();
+			final int MOD=(int)(1e9+7+0.5);
+			int mod1=1;
+			for(int i=n+1;i<=2*n;i++){
+				mod1=mod1*i%MOD;
+			}
+			//System.out.println(mod1);
+			int mod2=1;
+			for(int i=0;i<n;i++){
+				mod2=mod2*2%MOD;
+			}
+			//System.out.println(mod2);
+			int d=0;
+			System.out.println(mod1/mod2);
+			if(mod1<mod2){
+				d=MOD-mod1%mod2;
+			}else{
+				d=mod1/mod2;
+			}
+			System.out.println(d);
+		}
+	}
+	
+
+}

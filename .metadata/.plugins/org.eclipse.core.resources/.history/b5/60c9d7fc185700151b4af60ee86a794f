@@ -1,0 +1,20 @@
+package leetcode;
+
+import java.util.Hashtable;
+/**\
+ * 
+ * @tag:Two Sum
+ * @link:https://leetcode.com/problems/two-sum/
+ * @Num:N1_Two_Sum.java
+ * @author hijj
+ * Create at: 2015年9月10日 上午1:30:41
+ */
+public class N1_Two_Sum {
+	public int[] twoSum(int[] numbers,int target){
+		int[] a=new int[2];
+		Hashtable<Integer, Integer> hashtable=new Hashtable<Integer,Integer>();
+		
+		return a;
+	}
+
+}

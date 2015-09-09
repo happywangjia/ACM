@@ -1,0 +1,15 @@
+package ahu;
+
+import java.util.Scanner;
+
+public class N_711_2 {
+	private final int MOD=1000000007;
+	public static void main(String[] args){
+		Long n;
+		Scanner cin=new Scanner(System.in);
+		while(cin.hasNext()){
+			
+		}
+	}
+
+}
