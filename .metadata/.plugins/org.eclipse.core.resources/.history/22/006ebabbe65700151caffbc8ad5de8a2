@@ -1,0 +1,42 @@
+package algorithms;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * 
+ * @tag:插入排序
+ * @link:
+ * @Num:N_001.java
+ * @author hijj
+ * Create at: 2015年9月10日 下午11:55:22
+ */
+public class N_001 {
+	private final static int maxn=20;
+	private static void insertSort(int[] nums){
+		int key,j;
+		for(int i=2;i<=maxn;i++){
+			key=nums[i];
+			j=i-1;
+			while(j>0&&nums[j]>key){
+				nums[j+1]=nums[j];
+				j--;
+			}
+			nums[j+1]=key;
+		}
+		
+		
+	}
+	public static void main(String[] args){
+		int[] nums=new int[maxn];
+		for(int i=1;i<=maxn;i++){
+			nums[i]=(int) Math.floor(Math.random()*100);
+		}
+		insertSort(nums);
+	}
+	
+}
+ 
