@@ -9,12 +9,8 @@ import java.util.Scanner;
  * @Num:N_1576.java
  * @author hijj
  * Create at: 2015年9月10日 上午12:41:05
- * 
- * @add: A/B%c=A*B^(C-2)%c
- * B^(C-1)%C=1
  */
 public class N_1576 {
-	@SuppressWarnings("resource")
 	public static void main(String[] args){
 		int t;
 		Scanner cin=new Scanner(System.in);
@@ -30,4 +26,5 @@ public class N_1576 {
 			System.out.println(a);
 		}
 	}
+
 }
