@@ -1,3 +1,2 @@
+<a href="www.whijj.com"/>欢迎</a><br/>
 
-<input type="text"/>
-<input type=password"/>
