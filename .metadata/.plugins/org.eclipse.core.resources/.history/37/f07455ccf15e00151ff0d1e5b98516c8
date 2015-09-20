@@ -1,0 +1,20 @@
+package file;
+
+public class codeTest {
+	public static void main(String[] args){
+		String s="疯狂Java教程";
+		byte[] bytes1=s.getBytes();
+		for(byte b:bytes1){
+			System.out.print(Integer.toHexString(b&0xff)+"	");
+		}
+		System.out.println();
+		/**
+		 * 显示指定为gbk编码
+		 */
+		byte[] bytes2=s.getBytes();
+		for(byte b:bytes2){
+			System.out.print(Integer.toHexString(b&0xff)+"	");
+		}
+		System.out.println();
+	}
+}

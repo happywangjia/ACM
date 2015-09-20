@@ -1,0 +1,39 @@
+package file;
+
+import java.io.UnsupportedEncodingException;
+
+public class codeTest {
+	public static void main(String[] args) throws UnsupportedEncodingException{
+		String s="疯狂Java教程";
+		byte[] bytes1=s.getBytes();
+		for(byte b:bytes1){
+			System.out.print(Integer.toHexString(b&0xff)+"	");
+		}
+		System.out.println();
+		/**
+		 * 显示指定为gbk编码
+		 */
+		byte[] bytes2=s.getBytes("gbk");
+		for(byte b:bytes2){
+			System.out.print(Integer.toHexString(b&0xff)+"	");
+		}
+		System.out.println();
+		/**
+		 * 显示指定utf-8编码
+		 * utf-8中文占三个字符，英文占一个字符
+		 */
+		byte[] bytes3=s.getBytes("utf-8");
+		for(byte b:bytes3){
+			System.out.print(Integer.toHexString(b&0xff)+"	");
+		}
+		System.out.println();
+		/**
+		 * 显示指定utf-16be编码
+		 */
+		byte[] bytes4=s.getBytes("utf-16be");
+		for(byte b:bytes4){
+			System.out.print(Integer.toHexString(b&0xff)+"	");
+		}
+		System.out.println();
+	}
+}

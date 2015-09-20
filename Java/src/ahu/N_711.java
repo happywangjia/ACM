@@ -1,8 +1,6 @@
 package ahu;
 
 import java.util.Scanner;
-import java.io.*;
-import java.util.*;
 /**
  * 
  * @tag:配对

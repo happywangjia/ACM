@@ -1,0 +1,12 @@
+package learning;
+
+import algorithms.N_004;
+
+public class learn_2 {
+	public static void main(String[] args){
+		N_004<Integer> myStack=new N_004<Integer>();
+		myStack.push(1);;
+		myStack.push(2);
+	}
+
+}

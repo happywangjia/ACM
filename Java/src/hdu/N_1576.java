@@ -14,7 +14,6 @@ import java.util.Scanner;
  * B^(C-1)%C=1
  */
 public class N_1576 {
-	@SuppressWarnings("resource")
 	public static void main(String[] args){
 		int t;
 		Scanner cin=new Scanner(System.in);
@@ -29,5 +28,6 @@ public class N_1576 {
 			}
 			System.out.println(a);
 		}
+		cin.close();
 	}
 }

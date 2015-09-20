@@ -3,6 +3,7 @@ package ahu;
 import java.util.Scanner;
 
 public class N_711_2 {
+	@SuppressWarnings("resource")
 	public static void main(String[] args){
 		final int MOD=1000000007;
 		int n;

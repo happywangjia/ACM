@@ -1,0 +1,16 @@
+package learning;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+import algorithms.N_004;
+
+public class learn_2 {
+	public static void main(String[] args) throws IOException{
+		System.out.println("请输入表达式，以'#'结束：");
+		Scanner cin=new Scanner(System.in);
+		char ch=(char) System.in.read();
+		System.out.println(ch);
+	}
+
+}

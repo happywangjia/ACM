@@ -17,5 +17,6 @@ public class N_711_3 {
 			}
 			System.out.println(sum);
 		}
+		cin.close();
 	}
 }

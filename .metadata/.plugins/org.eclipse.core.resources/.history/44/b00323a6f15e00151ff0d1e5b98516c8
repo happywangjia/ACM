@@ -1,0 +1,13 @@
+package file;
+
+public class codeTest {
+	public static void main(String[] args){
+		String s="疯狂Java教程";
+		byte[] bytes1=s.getBytes();
+		for(byte b:bytes1){
+			System.out.println(Integer.toHexString(b&0xff)+"	");
+		}
+		System.out.println();
+		
+	}
+}

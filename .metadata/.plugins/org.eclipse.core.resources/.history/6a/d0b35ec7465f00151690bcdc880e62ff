@@ -1,0 +1,17 @@
+package file;
+
+/**
+ * 
+ * @tag:
+ * @link:
+ * @Num:ObjectSeriaDemo2.java
+ * @author hijj
+ * Create at: 2015年9月20日 上午11:12:21
+ * 
+ * 一个类实现一个序列化接口，那么其子类都可以进行序列化
+ * 
+ * 
+ */
+public class ObjectSeriaDemo2 {
+
+}

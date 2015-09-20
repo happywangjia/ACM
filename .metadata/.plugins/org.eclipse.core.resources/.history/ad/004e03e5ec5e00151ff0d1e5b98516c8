@@ -1,0 +1,20 @@
+package file;
+
+/**
+ * 
+ * @tag:
+ * @link:
+ * @Num:DataStreamTest.java
+ * @author hijj
+ * Create at: 2015年9月20日 上午12:32:23
+ * 
+ * DataOutputStream/DataInputStream
+ * 对"流"功能的扩展，可以更加方便的读取int,long,字符等类型数据
+ * DataOutputStream
+ * writeInt()/writeDouble()/WriteUTF()
+ */
+public class DataStreamTest {
+	public static void writerDemo(){
+		
+	}
+}
