@@ -1,0 +1,7 @@
+package learning;
+
+public class Stack {
+	private Che top;
+	private int size;
+	
+}

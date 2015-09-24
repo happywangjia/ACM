@@ -1,0 +1,71 @@
+package learning;
+
+public class Queue {
+	private Che font;
+	private Che rear;
+	private int size;
+	public Queue(){
+		font=null;
+		rear=null;
+		size=0;
+	}
+	public boolean isEmpty(){
+		if(size==0){
+			return true;
+		}
+		return false;
+	}
+	public boolean isFull(int n){
+		if(size==n) return true;
+		return false;
+	}
+	public boolean push(Che x,int n){
+		if(isFull(n)){
+			return false;
+		}
+		Che che=new Che();
+		che=x;
+		if(isEmpty()){
+			rear=font=che;
+			size++;
+		}
+		che.setLast(rear);
+		rear.setNext(che);
+		rear=che;
+		size++;
+		return true;
+	}
+	public Che pop(String id){
+		if(isEmpty()){
+			return null;
+		}
+		Che che=font;
+		while(che!=null&&che.getId()!=id){
+			che=che.getNext();
+		}
+		if(che==null) return null;
+		che.getLast().setNext(che.getNext());
+		che.getNext().setLast(che.getLast());
+		size--;
+		return che;
+	}
+	
+	public int getSize() {
+		return size;
+	}
+	public void setSize(int size) {
+		this.size = size;
+	}
+	public Che getFont() {
+		return font;
+	}
+	public void setFont(Che font) {
+		this.font = font;
+	}
+	public Che getRear() {
+		return rear;
+	}
+	public void setRear(Che rear) {
+		this.rear = rear;
+	}
+}

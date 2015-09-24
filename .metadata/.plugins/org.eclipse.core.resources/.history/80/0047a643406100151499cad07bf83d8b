@@ -1,0 +1,59 @@
+package leetcode;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class N10_regular {
+	public static boolean isMatch(String s, String p) {
+//		int len1 = s.length();
+//		int len2 = p.length();
+//		if (len1 == 0 && len2 == 0)
+//			return true;
+//		if (len1 == 0 && len2 != 0)
+//			return false;
+//		if (len1 != 0 && len2 == 0)
+//			return false;
+//		
+//		
+//		return false;
+		
+		 if (p.length() == 0)
+	            return s.length() == 0;
+
+	        // length == 1 is the case that is easy to forget.
+	        // as p is subtracted 2 each time, so if original
+	        // p is odd, then finally it will face the length 1
+	        if (p.length() == 1)
+	            return (s.length() == 1) && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.');
+
+	        // next char is not '*': must match current character
+	        if (p.charAt(1) != '*') {
+	            if (s.length() == 0)
+	                return false;
+	            else
+	                return (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')
+	                        && isMatch(s.substring(1), p.substring(1));
+	        }else{
+	            // next char is *
+	            while (s.length() > 0 && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.')) {
+	                if (isMatch(s, p.substring(2))) 
+	                    return true;
+	                s = s.substring(1);
+	            }
+	            return isMatch(s, p.substring(2));
+	        }
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		while (true) {
+			String str1 = cin.nextLine();
+			String str2 = cin.nextLine();
+			boolean flag = isMatch(str1, str2);
+			System.out.println(flag);
+		}
+
+	}
+}

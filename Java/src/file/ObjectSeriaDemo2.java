@@ -53,16 +53,30 @@ public class ObjectSeriaDemo2 {
 }
 
 class Foo implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Foo(){
 		System.out.println("foo...");
 	}
 }
 class Foo1 extends Foo{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Foo1(){
 		System.out.println("foo1...");
 	}
 }
 class Foo2 extends Foo1{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Foo2(){
 		System.out.println("foo2...");
 	}
@@ -77,11 +91,21 @@ class Bar{
 	}
 }
 class Bar1 extends Bar implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Bar1(){
 		System.out.println("bar1...");
 	}
 }
 class Bar2 extends Bar1{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Bar2(){
 		System.out.println("bar2");
 	}

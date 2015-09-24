@@ -1,0 +1,13 @@
+package learning;
+
+public class Queue {
+	private Che data;
+	private Che last;
+	private Che next;
+	public Queue(Che data){
+		this.data=data;
+		last=null;
+		next=null;
+	}
+
+}

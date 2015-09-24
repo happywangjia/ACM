@@ -1,0 +1,54 @@
+package learning;
+
+public class Che {
+	private String hao;
+	private String jkTime;
+	private String ckTime;
+	private String jdTime;
+	private String cdTime;
+	private boolean hFlag;
+	public String getHao() {
+		return hao;
+	}
+	public void setHao(String hao) {
+		this.hao = hao;
+	}
+	public String getJkTime() {
+		return jkTime;
+	}
+	public void setJkTime(String jkTime) {
+		this.jkTime = jkTime;
+	}
+	public String getCkTime() {
+		return ckTime;
+	}
+	public void setCkTime(String ckTime) {
+		this.ckTime = ckTime;
+	}
+	public String getJdTime() {
+		return jdTime;
+	}
+	public void setJdTime(String jdTime) {
+		this.jdTime = jdTime;
+	}
+	public String getCdTime() {
+		return cdTime;
+	}
+	public void setCdTime(String cdTime) {
+		this.cdTime = cdTime;
+	}
+	public boolean ishFlag() {
+		return hFlag;
+	}
+	public void sethFlag(boolean hFlag) {
+		this.hFlag = hFlag;
+	}
+	public Che(){
+		this.jkTime="00:00";
+		this.ckTime="00.00";
+		this.jdTime="00:00";
+		this.cdTime="00:00";
+		this.hFlag=false;
+	}
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;leetcode.N_9&apos; to &apos;N9_palindrome&apos;&#x0D;&#x0A;- Original project: &apos;Java&apos;&#x0D;&#x0A;- Original element: &apos;leetcode.N_9&apos;&#x0D;&#x0A;- Renamed element: &apos;leetcode.N9_palindrome&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;N_9&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;leetcode{N_9.java[N_9" matchStrategy="1" name="N9_palindrome" qualified="false" references="true" similarDeclarations="false" stamp="1442933501971" textual="false" version="1.0"/>
+</session>

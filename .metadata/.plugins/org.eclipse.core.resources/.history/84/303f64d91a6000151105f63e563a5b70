@@ -1,0 +1,12 @@
+package learning;
+
+public class learn_3 {
+	private static final int maxn=20;
+	
+	public static void main(String[] args){
+		int[] nums=new int[maxn];
+		for(int i=0;i<maxn;i++){
+			nums[i]=(int) Math.floor(Math.random()*100);
+		}
+	}
+}

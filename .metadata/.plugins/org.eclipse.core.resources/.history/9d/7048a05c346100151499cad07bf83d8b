@@ -1,0 +1,29 @@
+package leetcode;
+
+public class N7_reverse {
+	public static int reverse(int x) {
+		boolean fu=true;
+		boolean flag=false;
+		if(x<0){
+			fu=false;
+			x*=-1;
+		}
+		int sum=0;
+		while(x/10>0){
+			if(flag)
+				sum=sum*10+x%10;
+			if(flag==false&&x/10>0){
+				flag=true;
+				sum=sum*10+x%10;
+			}
+			x/=10;
+		}
+		if(x==0) return x;
+		if(fu==false)
+			return x*-1;
+		return x;
+	}
+	public static void main(String[] args){
+		System.out.println(reverse(-123));
+	}
+}

@@ -1,0 +1,58 @@
+package learning;
+
+public class Stack {
+	private Che top;
+	private int size;
+	
+	public Stack(){
+		top=null;
+		size=0;
+	}
+	public boolean isEmpty(){
+		if(size==0) return true;
+		return false;
+	}
+	public boolean isFull(int n){
+		if(size==n) return true;
+		return false;
+	}
+	public boolean push(Che x,int n){
+		if(isFull(n)) return false;
+		x.setNext(top);
+		top.setLast(x);
+		top=x;
+		size++;
+		return true;
+	}
+	public Che pop(String id){
+		if(size==0) return null;
+		Che che=top;
+		while(che!=null&&che.getId()!=id){
+			che=che.getNext();
+		}
+		if(che==null) return null;
+		che.getLast().setNext(che.getNext());
+		che.getNext().setLast(che.getLast());
+		return che;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+	public Che getTop() {
+		return top;
+	}
+	public void setTop(Che top) {
+		this.top = top;
+	}
+	public int getSize() {
+		return size;
+	}
+	public void setSize(int size) {
+		this.size = size;
+	}
+}
