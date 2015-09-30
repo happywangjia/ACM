@@ -18,8 +18,11 @@ public class Stack {
 	
 	public boolean push(Che x,int n){
 		if(isFull(n)) return false;
-		shu[size]=x;
+		Che che=new Che();
+		che=x;
+		shu[size]=che;
 		size++;
+//		System.out.println("stack:"+shu[size-1].getJkTime());
 		return true;
 	}
 	public Che pop(String id){
@@ -27,7 +30,7 @@ public class Stack {
 		boolean flag=false;
 		Che pp = new Che();
 		for(int i=0;i<size;i++){
-			if(flag==false&&shu[i].getId()==id){
+			if(flag==false&&shu[i].getId().equals(id)){
 				flag=true;
 				pp=shu[i];
 				continue;
@@ -36,6 +39,9 @@ public class Stack {
 				shu[i-1]=shu[i];
 			}
 		}
+		System.out.println("flag:"+flag);
+		if(flag==false) return null;
+		System.out.println("stack "+pp);
 		size--;
 		return pp;
 	}

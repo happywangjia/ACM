@@ -1,0 +1,23 @@
+package algorithms;
+
+public class N_006 {
+	private static int maxn=100;
+	int[] ff=new int[maxn];
+	public static void main(String[] args){
+		
+	}
+	
+	public void getFail(String p){
+		int len=p.length();
+		ff[0]=0;
+		ff[1]=0;
+		for(int i=1;i<len;i++){
+			int j=ff[i];
+			while(j!=0&&p.charAt(i)!=p.charAt(j)){
+				j=ff[j];
+			}
+			ff[i+1]=p.charAt(i)==p.charAt(j)?j+1:0;
+		}
+	}
+	
+}

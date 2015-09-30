@@ -1,0 +1,25 @@
+package learning.ks5;
+
+import java.util.Scanner;
+
+public class MyString {
+	private static final int maxn=100;
+	private char[] ch;
+	private int curLen;
+	
+	MyString(){
+		ch=new char[maxn];
+		curLen=0;
+	}
+	public char[] strAssign(){
+		curLen=0;
+		Scanner cin=new Scanner(System.in);
+		String in=cin.next();
+		for(int i=0;i<in.length();i++){
+			ch[curLen++]=in.charAt(i);
+		}
+		return ch;
+	}
+	
+
+}

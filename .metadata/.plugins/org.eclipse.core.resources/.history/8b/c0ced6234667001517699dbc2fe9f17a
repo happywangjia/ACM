@@ -1,0 +1,68 @@
+package learning.ks5;
+
+import java.util.Scanner;
+
+public class MyString {
+	private static final int maxn=100;
+	private char[] ch;
+	private int curLen;
+	
+	MyString(){
+		ch=new char[maxn];
+		curLen=0;
+	}
+	public char[] strAssign(){
+		curLen=0;
+		Scanner cin=new Scanner(System.in);
+		String in=cin.next();
+		for(int i=0;i<in.length();i++){
+			ch[curLen++]=in.charAt(i);
+		}
+		return ch;
+	}
+	
+	public int strLength(){
+		return curLen;
+	}
+	public MyString subString(int pos,int len){
+		MyString sub=new MyString();
+		for(int i=pos;i<curLen&&i<pos+len;i++){
+			sub.add(ch[i]);
+		}
+		if(sub.curLen==0) return null;
+		return sub;
+	}
+	public void index(MyString sun,int pos){
+		int i=pos,j=0;
+		while(i<curLen&&j<sun.curLen){
+			if(ch[i]==sun.ch[i]){
+				++i;
+				++j;
+			}else{
+				i=i-j+1;
+				j=0;
+			}
+		}
+		if(j>=sun.curLen){
+			System.out.print(i-sun.curlen+" ");
+			index(sun,i);
+		}
+	}
+	public void replace(MyString sun,MyString rep){
+		
+	}
+	public boolean compare(MyString x,MyString y){
+		return true;
+	}
+	
+	public void add(char c){
+		ch[curLen++]=c;
+	}
+	public void print(){
+		for(int i=0;i<curLen;i++){
+			System.out.print(ch[i]);
+		}
+		System.out.println();
+	}
+
+}

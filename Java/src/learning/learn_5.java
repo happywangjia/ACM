@@ -65,13 +65,16 @@ public class learn_5 {
 		if (che == null) {
 			che = bd.pop(id);
 			System.out.println("输入出便道时间；");
-			if(che==null) System.out.println("wangjia");
+			if(che==null){
+				System.out.println("error id");
+				return;
+			}
 			che.setCdTime(cin.next());
 		} else {
 			System.out.println("输入出车库时间：");
 			che.setCkTime(cin.next());
 		}
-		//System.out.println(che.getJkTime()+"  "+che.getCkTime()+"  "+che.getJdTime()+"  "+che.getCdTime()+"  "+che.getId());
+		System.out.println(che.getJkTime()+"  "+che.getCkTime()+"  "+che.getJdTime()+"  "+che.getCdTime()+"  "+che.getId());
 		int kTime = getTime(che.getJkTime(), che.getCkTime());
 		int dTime = getTime(che.getJdTime(), che.getCdTime());
 		int money = 0;
@@ -85,9 +88,9 @@ public class learn_5 {
 		if (cin.nextInt() == 1) {
 			money *= 1 + 0.15;
 		}
-		
 		System.out.println("停车费用为：" + money);
-		huan();
+		if(!bd.isEmpty())
+			huan();
 	}
 
 	private static void huan() {
@@ -100,6 +103,7 @@ public class learn_5 {
 			}
 			che = che.getNext();
 		}
+		if(che==bd.getRear()) return;
 		System.out.println("请输入出道和进库时间：");
 		String str = cin.next();
 		che.setJkTime(str);
@@ -107,8 +111,6 @@ public class learn_5 {
 	}
 
 	private static int getTime(String str1, String str2) {
-		if (str1 == "00:00")
-			return 0;
 		int s1 = Integer.parseInt(str1.substring(0, 2));
 		int s2 = Integer.parseInt(str2.substring(0, 2));
 		int fen1 = Integer.parseInt(str1.substring(3, 5));

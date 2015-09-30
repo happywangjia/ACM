@@ -1,6 +1,0 @@
-package learning;
-
-public class Stack {
-	private Che[] shu=new Che[100];
-	private int size;
-}
