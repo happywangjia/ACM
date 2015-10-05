@@ -36,22 +36,32 @@ public class MyString {
 		return sub;
 	}
 	public List<Integer> index(MyString sub){
-		int i=0,j=0;
 		List<Integer> list=new ArrayList<Integer>();
-		while(i<curLen&&j<sub.curLen){
-			if(ch[i]==sub.ch[j]){
-				++i;
-				++j;
-			}else{
-				i=i-j+1;
-				j=0;
+		int[] ff=new int[100];
+		int tLen=curLen;
+		int pLen=sub.curLen;
+		ff[0]=0;
+		ff[1]=0;
+		int j=0;
+		for(int i=1;i<pLen;i++){
+			while(j!=0&&sub.ch[i]!=sub.ch[j]){
+				j=ff[j];
 			}
-			if(j>=sub.curLen){
-				list.add(i-sub.curLen);
+			ff[j+1]=sub.ch[j]==sub.ch[i]? j+1:0;
+		}
+		j=0;
+		for(int i=0;i<tLen;i++){
+			while(j!=0&&sub.ch[j]!=ch[i]){
+				j=ff[j];
+			}
+			if(sub.ch[j]==ch[i]){
+				j++;
+			}
+			if(j==pLen){
+				list.add(i-pLen+1);
 				j=0;
 			}
 		}
-		if(list.isEmpty()) return null;
 		return list;
 	}
 	public MyString replace(MyString sub,MyString rep) throws CloneNotSupportedException{

@@ -1,0 +1,26 @@
+package learning;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+public class learn_5 {
+	public static void main(String[] args){
+//		PriorityQueue<jj> pQueue=new PriorityQueue<>(new Comparator<jj>() {
+//
+//			@Override
+//			public int compare(jj o1, jj o2) {
+//				// TODO Auto-generated method stub
+//				return 0;
+//			}
+//		}));
+		PriorityQueue<jj> pQueue=new PriorityQueue<>(cmp->(jj o1,jj o2){
+			return o1.p<o2.p;
+		});
+	}
+	
+	
+}
+class jj{
+	int w;
+	int p;
+}

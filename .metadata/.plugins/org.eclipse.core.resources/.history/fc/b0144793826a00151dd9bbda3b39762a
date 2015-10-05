@@ -1,0 +1,49 @@
+package leetcode;
+
+import java.util.Scanner;
+
+public class N8_str1ing {
+	public static int myAtoi(String str) {
+		String str1=str.trim();
+		int len = str1.length();
+		if (len == 0)
+			return 0;
+		if(str1.charAt(0)!='-'&&str1.charAt(0)!='+'&&!(str1.charAt(0) >= '0' && str1.charAt(0) <= '9'))
+			return 0;
+		boolean flag = true;
+		int sum = 0;
+		boolean zero = true;
+		for (int i =0; i <len; i++) {
+			if (str1.charAt(i) >= '0' && str1.charAt(i) <= '9') {
+				if (zero == false) {
+					sum = sum * 10 + str1.charAt(i) - '0';
+					continue;
+				}
+				if (zero == true && str1.charAt(i) != '0') {
+					sum = str1.charAt(i) - '0';
+					zero = false;
+				}
+			}
+			if(i==0){
+				if(str1.charAt(i)=='-'){
+					flag=false;
+				}else if(str1.charAt(i)!='+'&&!(str1.charAt(i)>='0'&&str1.charAt(i)<='9')){
+					return 0;
+				}
+			}
+			if(i>0&&(str1.charAt(i)<'0'||str1.charAt(i)>'9'))
+				return 0;
+		}
+		if (flag == false)
+			return sum * -1;
+		else
+			return sum;
+	}
+	public static void main(String[] args){
+		Scanner cin=new Scanner(System.in);
+		String str1=cin.nextLine();
+		System.out.println(myAtoi(str1.trim()));
+		cin.close();
+	}
+
+}

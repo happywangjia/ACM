@@ -1,12 +1,9 @@
 package learning;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class learn_4 {
-	private static final int maxn=20;
+//	private static final int maxn=20;
 	
 	public static void main(String[] args) {
 		String str="wangjia";

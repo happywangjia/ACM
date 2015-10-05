@@ -1,0 +1,31 @@
+package algorithms.tree;
+
+public class OptimalBST {
+	private static final int n = 5;
+	private static final double[] p = { -1, 0.15, 0.1, 0.05, 0.1, 0.2 };
+	private static final double[] q = { 0.05, 0.1, 0.05, 0.05, 0.05, 0.1 };
+	private static int root[][] = new int[n + 1][n + 1];
+	private static double[][] w = new double[n + 2][n + 2];
+	private static double[][] e = new double[n + 2][n + 2];
+	
+	public static void main(String[] args){
+		
+	}
+	private static void optimalBST(){
+		for(int i=1;i<=n+1;i++){
+			w[i][i-1]=q[i-1];
+			e[i][i-1]=q[i-1];
+		}
+		for(int len=1;len<=n;len++){
+			for(int i=1;i<=n-len+1;i++){
+				int j=i+len-1;
+				e[i][j]=Double.MAX_VALUE;
+				w[i][j]=w[i][j-1]+p[j]+q[j];
+				for(int r=i;r<=j;r++){
+					double temp=e[i][r-1]+e[r+1][j]+w[i][j];
+				}
+			}
+		}
+		
+	}
+}

@@ -16,18 +16,16 @@ import java.io.IOException;
  *         单字节，不要缓冲进行文件拷贝
  */
 public class copyFileByByteTest {
-	public static void copyFileByByte(File srcFile, File destFile)
-			throws FileNotFoundException {
+	public static void copyFileByByte(File srcFile, File destFile) throws FileNotFoundException {
 		if (!srcFile.exists()) {
 			throw new IllegalArgumentException("文件" + srcFile + "不存在！");
 		}
 		if (!srcFile.isFile()) {
 			throw new IllegalArgumentException("文件" + srcFile + "不是文件！");
 		}
-		FileInputStream bis = new FileInputStream(srcFile);
-		FileOutputStream bos = new FileOutputStream(destFile);
 		int c;
-		try {
+		try (FileInputStream bis = new FileInputStream(srcFile);
+				FileOutputStream bos = new FileOutputStream(destFile)) {
 			while ((c = bis.read()) != -1) {
 				bos.write(c);
 				bos.flush();// 可以不要

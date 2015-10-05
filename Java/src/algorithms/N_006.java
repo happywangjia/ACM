@@ -11,6 +11,7 @@ public class N_006 {
 	
 	public static void getFail(String p){
 		int len=p.length();
+//		System.out.println(len);
 		ff[0]=0;
 		ff[1]=0;
 		for(int i=1;i<len;i++){
@@ -33,7 +34,8 @@ public class N_006 {
 			if(p.charAt(j)==t.charAt(i))
 				j++;
 			if(j==pLen){
-				System.out.println(i-pLen+1);
+				System.out.println(i-pLen+1+" ");
+				j=0;
 			}
 		}
 	}

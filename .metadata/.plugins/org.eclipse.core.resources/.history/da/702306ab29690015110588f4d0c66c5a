@@ -1,0 +1,26 @@
+package algorithms.tree;
+
+import java.util.Scanner;
+
+public class Hdu1166 {
+	private Scanner cin=new Scanner(System.in);
+	private static final int maxn=55555; 
+	private static int sum[maxn<<2];
+	
+	public static void main(String[] args){
+		int T,n;
+		
+		T=cin.nextInt();
+		for(int cas=1;cas<=T;cas++){
+			System.out.println("Case "+cas+":");
+			build(1,n,1);
+		}
+	}
+	public build(int l,int r,int rt){
+		if(l==r){
+			sum[rt]=cin.next();
+		}
+	}
+	
+
+}

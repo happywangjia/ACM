@@ -46,7 +46,7 @@ public class ks5 {
 				if(list!=null){
 					Iterator<Integer> iterator=list.iterator();
 					while(iterator.hasNext()){
-						System.out.print(iterator.next());
+						System.out.print(iterator.next()+" ");
 					}
 					System.out.println();
 				}

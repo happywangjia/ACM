@@ -1,0 +1,35 @@
+package learning;
+
+public class learn_6 {
+	private static final int n=5;
+	private static final double[] p={-1,0.15,0.1,0.05,0.1,0.2};
+	private static final double[] q={0.05,0.1,0.05,0.05,0.05,0.1};
+	private static int root[][]=new int[n+1][n+1];
+	private static double[][] w=new double[n+2][n+2];
+	private static double[][] e=new double[n+2][n+2];
+	
+	public static void main(String[] args){
+		optimalBST(p,q,n);
+	
+	}
+	private static void optimalBST(double[] p2,double[] q2,int n){
+		for(int i=1;i<=n+1;i++){
+			e[i][i-1]=q[i-1];
+			w[i][i-1]=q[i-1];
+		}
+		for(int l=1;l<=n;l++){
+			for(int i=1;i<=n-1+1;i++){
+				int j=i+l-1;
+				e[i][j]=Double.MAX_VALUE;
+				w[i][j]=w[i][j-1]+p[j]+q[j];
+				for(int k=i;k<=j;k++){
+					double temp=e[i][k-1]+e[k+1][j]+w[i][j];
+					if(temp<e[i][j]){
+						e[i][j]=temp;
+						root[i][j]=k;
+					}
+				}
+			}
+		}
+	}
+}

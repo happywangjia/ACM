@@ -1,0 +1,25 @@
+package learning;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+public class learn_5 {
+	public static void main(String[] args){
+		Comparator<jj> cmp=new Comparator<jj>() {
+
+			@Override
+			public int compare(jj o1, jj o2) {
+				if(o1.p<o2.p) return -1;
+				else if(o1.p>o2.p) return 1;
+				else return 0;
+			}
+		};
+		PriorityQueue<jj> pQueue=new PriorityQueue<>();
+	}
+	
+	
+}
+class jj{
+	int w;
+	int p;
+}

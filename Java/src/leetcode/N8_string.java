@@ -4,42 +4,57 @@ import java.util.Scanner;
 
 public class N8_string {
 	public static int myAtoi(String str) {
-		int len = str.length();
+		String str1=str.trim();
+		int len = str1.length();
 		if (len == 0)
 			return 0;
-		if(str.charAt(0)!='-'&&str.charAt(0)!='+'&&!(str.charAt(0) >= '0' && str.charAt(0) <= '9'))
+		if(str1.charAt(0)!='-'&&str1.charAt(0)!='+'&&!(str1.charAt(0) >= '0' && str1.charAt(0) <= '9'))
 			return 0;
 		boolean flag = true;
-		if (str.charAt(0) == '-') {
-			flag = false;
-		} else {
-			flag = true;
-		}
-		int sum = 0;
+		long sum = 0;
 		boolean zero = true;
 		for (int i =0; i <len; i++) {
-			if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+			if (str1.charAt(i) >= '0' && str1.charAt(i) <= '9') {
 				if (zero == false) {
-					sum = sum * 10 + str.charAt(i) - '0';
+					sum = sum * 10 + str1.charAt(i) - '0';
+					if(sum-1>Integer.MAX_VALUE){
+						break;
+					}
 					continue;
 				}
-				if (zero == true && str.charAt(i) != '0') {
-					sum = sum * 10 + str.charAt(i) - '0';
+				if (zero == true && str1.charAt(i) != '0') {
+					sum = str1.charAt(i) - '0';
 					zero = false;
 				}
 			}
-			if(i>0&&(str.charAt(i)<'0'||str.charAt(i)>'0'))
-				return 0;
+			if(i==0){
+				if(str1.charAt(i)=='-'){
+					flag=false;
+				}else if(str1.charAt(i)!='+'&&!(str1.charAt(i)>='0'&&str1.charAt(i)<='9')){
+					break;
+				}
+			}
+			if(i>0&&(str1.charAt(i)<'0'||str1.charAt(i)>'9'))
+				break;
 		}
-		if (flag == false)
-			return sum * -1;
-		else
-			return sum;
+		System.out.println(sum);
+		if (flag == false){
+			sum=sum*-1;
+			if(sum<Integer.MIN_VALUE){
+				return Integer.MIN_VALUE;
+			}
+		}
+		else{
+			if(sum>Integer.MAX_VALUE){
+				return Integer.MAX_VALUE;
+			}
+		}
+		return (int) sum;
 	}
 	public static void main(String[] args){
 		Scanner cin=new Scanner(System.in);
-		String str=cin.nextLine();
-		System.out.println(myAtoi(str));
+		String str1=cin.nextLine();
+		System.out.println(myAtoi(str1));
 		cin.close();
 	}
 
