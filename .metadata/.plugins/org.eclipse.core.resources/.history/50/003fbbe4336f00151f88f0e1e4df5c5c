@@ -1,0 +1,20 @@
+package learning;
+
+public class learn_6 {
+	public static void main(String[] args){
+		Me a=new Me();
+		a.x=10;
+		a.y=14;
+		Me c;
+		c=a;
+		c.x+=10;
+		System.out.println(c.x);
+		System.out.println(a.x);	
+	}
+	
+}
+class Me{
+	int x;
+	int y;
+	
+}

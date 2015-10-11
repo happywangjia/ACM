@@ -47,7 +47,7 @@ public class MyString {
 			while(j!=0&&sub.ch[i]!=sub.ch[j]){
 				j=ff[j];
 			}
-			ff[j+1]=sub.ch[j]==sub.ch[i]? j+1:0;
+			ff[i+1]=sub.ch[j]==sub.ch[i]? j+1:0;
 		}
 		j=0;
 		for(int i=0;i<tLen;i++){

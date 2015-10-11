@@ -1,0 +1,133 @@
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class N15_3Sum {
+	public static List<List<Integer>> threeSum(int[] nums) {
+		int len = nums.length;
+		List<Integer> list = new ArrayList<Integer>();
+		List<List<Integer>> listContain = new ArrayList<>();
+		Map<String,Integer> ss=new HashMap<>();
+		Map<Wj,Integer> map=new Map<N15_3Sum.Wj, Integer>() {
+
+			@Override
+			public boolean containsKey(Object key) {
+				
+				return false;
+			}
+
+			@Override
+			public boolean containsValue(Object value) {
+				Wj aa=(Wj) value;
+				if(x==aa.x&&y==aa.y&&z==aa.z) return true;
+				return false;
+			}
+
+			@Override
+			public Integer get(Object key) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Integer put(Wj key, Integer value) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Integer remove(Object key) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public void putAll(Map<? extends Wj, ? extends Integer> m) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void clear() {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public Set<Wj> keySet() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Collection<Integer> values() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public Set<java.util.Map.Entry<Wj, Integer>> entrySet() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+
+			@Override
+			public int size() {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+
+			@Override
+			public boolean isEmpty() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+		};
+		for (int i = 0; i < len; i++) {
+			for (int j = i + 1; j < len; j++) {
+				for (int k = j + 1; k < len; k++) {
+					if (nums[i] +nums[j] + nums[k] == 0) {
+						if(map.containsKey(new Wj(i,j,k))) break;
+						list.clear();
+						list.add(i);
+						list.add(j);
+						list.add(k);
+						listContain.add(list);
+						System.out.println(i+" "+j+" "+k);
+						map.put(new Wj(i,j,k), 1);
+						break;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	static class Wj {
+		int x;
+		int y;
+		int z;
+
+		Wj(int x, int y,int z) {
+			int max=x,min=x;
+			if(max<y) max=y;
+			if(max<z) max=z;
+			if(min>y) min=y;
+			if(min>z) min=z;
+			this.x=min;
+			this.z=max;
+			this.y=x+y+z-max-min;	
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] arrs={-1,0,1,2,-1,-4};
+		threeSum(arrs);
+	}
+}

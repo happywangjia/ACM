@@ -1,0 +1,25 @@
+package leetcode;
+
+/**
+ * 
+ * @tag:Integer to Roman
+ * @link:https://leetcode.com/problems/integer-to-roman/
+ * @Num:N12_Integer.java
+ * @author hijj
+ * Create at: 2015年10月10日 下午7:06:24
+ */
+public class N12_Integer {
+	public static final char[] ROMAN={
+			'I','V','X','L','C','D','M'
+	};
+	
+	public String intToRoman(int num) {
+		StringBuffer sb=new StringBuffer();
+		while(num>=1000){
+			sb.append('M');
+			num-=1000;
+		}
+		
+		return null;
+	}
+}

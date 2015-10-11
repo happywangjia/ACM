@@ -1,0 +1,61 @@
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class N15_3Sum {
+	public static List<List<Integer>> threeSum(int[] nums) {
+		int len = nums.length;
+		List<Integer> list = new ArrayList<Integer>();
+		List<List<Integer>> listContain = new ArrayList<>();
+		Map<String,Integer> map=new HashMap<>();
+		for (int i = 0; i < len; i++) {
+			for (int j = i + 1; j < len; j++) {
+				for (int k = j + 1; k < len; k++) {
+					if (nums[i] +nums[j] + nums[k] == 0) {
+					//	System.out.println(1+" "+new Wj(nums[i],nums[j],nums[k]).toString());
+						if(map.containsKey(new Wj(nums[i],nums[j],nums[k]).toString())) break;
+						list.clear();
+						list.add(i);
+						list.add(j);
+						list.add(k);
+						listContain.add(list);
+					//	System.out.println(nums[i]+" "+nums[j]+" "+nums[k]);
+						map.put(new Wj(nums[i],nums[j],nums[k]).toString(), 1);
+						break;
+					}
+				}
+			}
+		}
+		return listContain;
+	}
+
+	static class Wj {
+		int x;
+		int y;
+		int z;
+
+		Wj(int x, int y,int z) {
+			int max=x,min=x;
+			if(max<y) max=y;
+			if(max<z) max=z;
+			if(min>y) min=y;
+			if(min>z) min=z;
+			this.x=min;
+			this.z=max;
+			this.y=x+y+z-max-min;	
+		}
+		public String toString(){
+			return x+""+y+""+z;
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] arrs={-1,0,1,2,-1,-4};
+		threeSum(arrs);
+	}
+}

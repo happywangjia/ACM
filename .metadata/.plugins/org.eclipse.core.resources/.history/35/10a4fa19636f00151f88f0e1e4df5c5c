@@ -1,0 +1,22 @@
+package leetcode;
+
+public class N14_Longest {
+	public static String longestCommonPrefix(String[] strs) {
+		int len=strs.length;
+		int k=0;
+		while(true){
+			if(k>=strs[0].length()){
+				break;
+			}
+			char c=strs[0].charAt(k);
+			for(int i=1;i<len;i++){
+				if(k>=strs[i].length()) break;
+				if(strs[i].charAt(k)!=strs[0].charAt(k)) break;
+			}
+		}
+		return null;
+	}
+	public static void main(String[] args){
+		
+	}
+}

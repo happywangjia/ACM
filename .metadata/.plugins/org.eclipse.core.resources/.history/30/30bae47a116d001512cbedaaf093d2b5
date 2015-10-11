@@ -1,0 +1,15 @@
+package leetcode;
+
+public class N11_Container {
+	public int maxArea(int[] height){
+		int len=height.length;
+		int[][] ma=new int[len][len];
+		
+		
+		return 0;
+	}
+	public static void main(String[] args){
+		
+	}
+	
+}

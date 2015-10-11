@@ -1,0 +1,28 @@
+package leetcode;
+
+import java.util.Scanner;
+
+public class N10_regular {
+	public static boolean isMatch(String s, String p) {
+		if (p.charAt(0) == '*') {
+			return isMatch(s, p.substring(1));
+		}
+		if(s.charAt(0)==p.charAt(0)){
+			
+		}
+		
+		
+		return true;
+	}
+
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		cin.close();
+		while (true) {
+			String str1 = cin.nextLine();
+			String str2 = cin.nextLine();
+			boolean flag = isMatch(str1, str2);
+			System.out.println(flag);
+		}
+	}
+}

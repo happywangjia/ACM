@@ -1,0 +1,47 @@
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class N15_3Sum {
+	public List<List<Integer>> threeSum(int[] nums) {
+		int len = nums.length;
+		List<Integer> list = new ArrayList<Integer>();
+		List<List<Integer>> listContain = new ArrayList<>();
+
+		for (int i = 0; i < len; i++) {
+			for (int j = i + 1; j < len; j++) {
+				for (int k = j + 1; k < len; k++) {
+					if (i + j + k == 0) {
+						list.clear();
+						list.add(i);
+						list.add(j);
+						list.add(k);
+						listContain.add(list);
+					}
+				}
+			}
+		}
+
+		return null;
+	}
+
+	class Wj {
+		int x;
+		int y;
+
+		Wj(int x, int y) {
+			if (x > y) {
+				this.x = y;
+				this.y = x;
+			} else {
+				this.x = x;
+				this.y = y;
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

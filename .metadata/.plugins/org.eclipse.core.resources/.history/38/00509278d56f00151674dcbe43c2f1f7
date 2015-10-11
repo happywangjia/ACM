@@ -1,0 +1,37 @@
+package leetcode;
+
+import java.util.Arrays;
+
+public class N16_3Sum {
+	public static int threeSumClosest(int[] nums, int target) {
+		Arrays.sort(nums);
+		int l=0,r=nums.length-1;
+		int Min=Integer.MAX_VALUE;
+		int ss=0;
+		while(l<r-1){
+			for(int j=l+1;j<r;j++){
+				if(j>l+1&&nums[j]==nums[j-1]) continue;
+				int kk=nums[l]+nums[j]+nums[r];
+				int shu=Math.abs(kk-target);
+				if(shu<Min){
+					Min=shu;
+					ss=kk;
+				}
+				if(kk>target){
+					do{
+						l++;
+					}while(l<r-1&&nums[l]==nums[l-1]);
+				}
+				break;
+			}
+		}
+		
+		return 0;
+	}
+	public static void main(String[] args){
+		int[] s={
+				-1,2,1,-4
+		};
+		System.out.println(threeSumClosest(s, 1));
+	}
+}

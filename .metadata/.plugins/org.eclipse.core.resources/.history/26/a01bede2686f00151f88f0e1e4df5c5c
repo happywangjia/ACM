@@ -1,0 +1,13 @@
+package leetcode;
+
+import java.util.List;
+
+public class N15_3Sum {
+	public List<List<Integer>> threeSum(int[] nums) {
+		
+		return null;
+	}
+	public static void main(String[] args){
+		
+	}
+}

@@ -1,0 +1,107 @@
+package leetcode;
+
+import java.util.Scanner;
+
+/**
+ * 
+ * @tag:Integer to Roman
+ * @link:https://leetcode.com/problems/integer-to-roman/
+ * @Num:N12_Integer.java
+ * @author hijj
+ * Create at: 2015年10月10日 下午7:06:24
+ */
+public class N12_Integer {
+	public static Scanner cin=new Scanner(System.in);
+	public static final char[] ROMAN={
+			'I','V','X','L','C','D','M'
+	};
+	
+	public static String intToRoman(int num) {
+		StringBuffer sb=new StringBuffer();
+		int shu=1000;
+		
+		while(shu>=1){
+			int kk=(int) Math.log10(shu);
+			while(num>=shu){
+				sb.append(ROMAN[kk*2]);
+				num-=shu;
+			}
+			if(num>=shu-shu/10){
+				sb.append(ROMAN[kk*2-2]+ROMAN[kk*2]);
+				num-=shu-shu/10;
+			}
+			shu/=2;
+			if(shu==0) break;
+			while(num>=shu){
+				sb.append(ROMAN[kk*2-1]);
+				num-=shu;
+			}	
+			if(num>=shu-shu/5){
+				sb.append(ROMAN[kk*2-2]+""+ROMAN[kk*2-1]);
+				num-=shu-shu/5;
+			}
+			shu/=5;
+		}
+		
+		
+//		while(num>=1000){
+//			sb.append('M');
+//			num-=1000;
+//		}
+//		if(num>=900){
+//			sb.append("CM");
+//			num-=900;
+//		}
+//		while(num>=500){
+//			sb.append("D");
+//			num-=500;
+//		}
+//		if(num>=400){
+//			sb.append("CD");
+//			num-=400;
+//		}
+//		while(num>=100){
+//			sb.append("C");
+//			num-=100;
+//		}
+//		if(num>=90){
+//			sb.append("XC");
+//			num-=90;
+//		}
+//		while(num>=50){
+//			sb.append("L");
+//			num-=50;
+//		}
+//		if(num>=40){
+//			sb.append("XL");
+//			num-=40;
+//		}
+//		while(num>=10){
+//			sb.append("X");
+//			num-=10;
+//		}
+//		if(num>=9){
+//			sb.append("IX");
+//			num-=9;
+//		}
+//		while(num>=5){
+//			sb.append("V");
+//			num-=5;
+//		}
+//		if(num>=4){
+//			sb.append("IV");
+//			num-=4;
+//		}
+//		while(num>=1){
+//			sb.append("I");
+//			num-=1;
+//		}
+		
+		return sb.toString();
+	}
+	public static void main(String[] args){
+		while(true){
+			System.out.println(intToRoman(cin.nextInt()));
+		}
+	}
+}

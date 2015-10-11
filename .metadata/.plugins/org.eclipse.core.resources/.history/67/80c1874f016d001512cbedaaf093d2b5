@@ -1,0 +1,19 @@
+package leetcode;
+
+import java.util.Scanner;
+
+public class N10_regular {
+	public static boolean isMatch(String s, String p) {
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		while (true) {
+			String str1 = cin.next();
+			String str2 = cin.next();
+			boolean flag = isMatch(str1, str2);
+			System.out.println(flag);
+		}
+	}
+}

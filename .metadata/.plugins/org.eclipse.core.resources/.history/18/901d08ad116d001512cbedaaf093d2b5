@@ -1,0 +1,20 @@
+package leetcode;
+
+public class N11_Container {
+	public int maxArea(int[] height){
+		int len=height.length;
+		int kk;
+		int Max=-1;
+		for(int i=1;i<len;i++){
+			for(int j=i+1;j<len;j++){
+				kk=(j-i)*(Math.abs(height[i]-height[j]));
+				if(kk>Max) Max=kk;
+			}
+		}
+		return Max;
+	}
+	public static void main(String[] args){
+		
+	}
+	
+}
