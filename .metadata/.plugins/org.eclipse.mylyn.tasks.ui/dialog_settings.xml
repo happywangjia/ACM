@@ -6,11 +6,11 @@
 		<item value="Aggregate for window 1441642317306" key="WorkingSetName"/>
 		<item value="true" key="IsUsingWindowWorkingSet"/>
 		<item value="true" key="ShowStatusLine"/>
-		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History/&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
 		<section name="DialogBoundsSettings">
-			<item value="600" key="DIALOG_WIDTH"/>
-			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="412" key="DIALOG_WIDTH"/>
+			<item value="1|Microsoft YaHei UI|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+			<item value="678" key="DIALOG_HEIGHT"/>
 			<item value="310" key="DIALOG_X_ORIGIN"/>
 			<item value="188" key="DIALOG_Y_ORIGIN"/>
 		</section>

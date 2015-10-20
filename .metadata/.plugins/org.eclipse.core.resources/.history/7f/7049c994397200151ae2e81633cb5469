@@ -1,0 +1,216 @@
+package learning.ks7;
+
+import java.util.Scanner;
+
+public class MatrixTest {
+	private static Scanner cin=new Scanner(System.in);
+	public static void main(String[] args){
+		int n;
+		CrossList aaa=new CrossList();
+		CrossList bbb=new CrossList();
+		CrossList ccc;
+		while(true){
+			System.out.println("0:创建矩阵");
+			System.out.println("1:A+B");
+			System.out.println("2:A-B");
+			System.out.println("3:退出");
+			n=cin.nextInt();
+			switch(n){
+			case 0:
+				aaa=createMatrix();
+				aaa.print();
+				bbb=createMatrix();
+				bbb.print();
+				break;
+			case 1:
+				ccc=AaddB(aaa,bbb,true);
+				ccc.print();
+				break;
+			case 2:
+				ccc=AaddB(aaa,bbb,false);
+				ccc.print();
+				break;
+			default:
+				return ;
+			}
+		}
+	}
+	public static CrossList createMatrix(){
+		System.out.println("输入行数、列数:");
+		int mu=cin.nextInt();
+		int nu=cin.nextInt();
+		CrossList crossList=new CrossList(mu, nu);
+		crossList.rhead=new OLNode[mu+1];
+		crossList.chead=new OLNode[nu+1];
+		for(int i=1;i<=mu;i++){
+			for(int j=1;j<=nu;j++){
+				int kk=cin.nextInt();
+				if(kk!=0){
+					crossList.tu++;
+					if(crossList.rhead[i]==null){
+						crossList.rhead[i]=new OLNode();
+					}
+//					System.out.println(crossList.rhead[i]);
+					OLNode rr=crossList.rhead[i];
+					OLNode olNode=new OLNode(i,j,kk);
+					while(rr.right!=null){
+						rr=rr.right;
+					}
+					rr.right=olNode;
+					if(crossList.chead[i]==null){
+						crossList.chead[i]=new OLNode();
+					}
+					
+					OLNode cc=crossList.chead[i];
+					while(cc.down!=null){
+						cc=cc.down;
+					}
+				}
+			}
+		}
+		return crossList;
+	}
+	public static CrossList AaddB(CrossList aaa,CrossList bbb,boolean flag){
+		CrossList ccc=new CrossList(aaa.mu, aaa.nu, aaa.tu);
+		ccc.rhead=new OLNode[aaa.mu+1];
+		ccc.chead=new OLNode[aaa.nu+1];
+		for(int i=1;i<=aaa.mu;i++){
+			if(aaa.rhead[i]==null) continue;
+			OLNode dd=aaa.rhead[i];
+			while(dd.right!=null){
+				dd=dd.right;
+				if(ccc.rhead[i]==null){
+					ccc.rhead[i]=new OLNode();
+				}
+				OLNode ww=ccc.rhead[i];
+				while(ww.right!=null){
+					ww=ww.right;
+				}
+				OLNode wj=new OLNode(dd.row,dd.col,dd.value);
+				ww.right=wj;
+				int col=dd.col;
+				if(ccc.chead[col]==null){
+					ccc.chead[col]=new OLNode();
+				}
+				OLNode jj=ccc.chead[col];
+				while(jj.down!=null){
+					jj=jj.down;
+				}
+				jj.down=wj;
+			}
+		}
+		for(int i=1;i<=bbb.mu;i++){
+			if(bbb.rhead[i]==null) continue;
+			OLNode b1=bbb.rhead[i];
+			while(b1.right!=null){
+				b1=b1.right;
+				int kk=b1.value;
+				if(flag==false){
+					kk*=-1;
+				}
+				if(ccc.rhead[i]==null){
+					ccc.rhead[i]=new OLNode();
+				}
+				OLNode c1=ccc.rhead[i];
+				OLNode c2=new OLNode(b1.row,b1.col,kk);
+				while(c1.right!=null){
+		//			System.out.println(b1.col+"  "+c1.right.col);
+					if(c1.right.col==b1.col){
+						System.out.println(c1.right.value+"  "+kk);
+						c1.right.value+=kk;
+						if(c1.right.value==0){
+							c1.right=c1.right.right;
+							ccc.tu--;
+						}
+						//System.out.println(c1.right.value+"  "+kk);
+						break;
+					}
+					if(c1.right.col>b1.col){
+						c2.right=c1.right;
+						c1.right=c2;
+						ccc.tu++;
+						break;
+					}
+					c1=c1.right;
+				}
+				if(c1.right==null){
+					c1.right=c2;
+					ccc.tu++;
+				}
+				if(ccc.chead[b1.col]==null){
+					ccc.chead[b1.col]=new OLNode();
+				}
+				OLNode c4=ccc.chead[b1.col];
+				while(c4.down!=null){
+					if(c4.down.row==b1.row){
+						break;
+					}
+					if(c4.down.row>b1.row){
+						c2.down=c4.down;
+						c4.down=c2;
+					}
+				}
+				if(c4.down==null){
+					c4.down=c2;
+				}
+			}
+		}
+		return ccc;
+	}
+	
+}
+class OLNode{
+	int row,col;
+	int value;
+	OLNode right,down;
+	public OLNode(int row,int col,int value){
+		this.row=row;
+		this.col=col;
+		this.value=value;
+		right=null;
+		down=null;
+	}
+	public OLNode(){
+		right=null;
+		down=null;
+	}
+}
+class CrossList{
+	OLNode[] rhead,chead;
+	int mu,nu,tu;
+	public CrossList(int mu,int nu){
+		this.mu=mu;
+		this.nu=nu;
+		this.tu=0;
+	}
+	public CrossList(int mu,int nu,int tu){
+		this(mu,nu);
+		this.tu=tu;
+	}
+	public CrossList(){
+		
+	}
+	public void print(){
+		System.out.println(mu+"  "+nu+"  "+tu);
+		int[][] arr=new int[mu+1][nu+1];
+		System.out.println("输出十字链表：");
+		for(int i=1;i<=mu;i++){
+			if(this.rhead[i]!=null){
+				OLNode kk;
+				kk=this.rhead[i].right;
+				while(kk!=null){
+					arr[kk.row][kk.col]=kk.value;
+					System.out.println(kk.row+"  "+kk.col+"  "+kk.value);
+					kk=kk.right;
+				}
+			}
+		}
+		System.out.println("输出矩阵：");
+		for(int i=1;i<=mu;i++){
+			for(int j=1;j<=nu;j++){
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println();
+		}	
+	}
+}

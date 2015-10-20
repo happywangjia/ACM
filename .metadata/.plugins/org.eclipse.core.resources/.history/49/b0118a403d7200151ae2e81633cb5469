@@ -1,0 +1,81 @@
+package learning.ks7;
+
+import java.util.Scanner;
+
+public class MatrixTest2 {
+	public static Scanner cin=new Scanner(System.in);
+	public static void main(String[] args){
+		System.out.println("输入行数，列数：");
+		int row=cin.nextInt();
+		int col=cin.nextInt();
+		TSMatrix t1=new TSMatrix(row, col);
+		for(int i=1;i<=row;i++){
+			for(int j=1;j<=col;j++){
+				int kk=cin.nextInt();
+				t1.add(i, j, kk);
+			}
+		}
+		for(int i=0;i<t1.len;i++){
+			Triple tr=t1.data[i];
+			int ww=tr.col;
+			tr.col=tr.row;
+			tr.row=ww;
+		}
+		
+	}
+}
+class Triple {
+	int row;
+	int col;
+	int e;
+
+	public Triple(int row, int col, int e) {
+		this.row = row;
+		this.col = col;
+		this.e = e;
+	}
+}
+class TSMatrix {
+	private static final int MAXNSIZE = 50;
+	Triple[] data;
+	int m, n, len;
+
+	public TSMatrix(int m, int n) {
+		data = new Triple[MAXNSIZE];
+		this.m = m;
+		this.n = n;
+		this.len = 0;
+	}
+
+	public void add(int row, int col, int e) {
+		Triple tr = new Triple(row, col, e);
+		data[len++] = tr;
+	}
+
+	public void printThree() {
+		for (int i = 0; i < len; i++) {
+			System.out.println(data[i].row + "	" + data[i].col + "		"
+					+ data[i].e);
+		}
+	}
+
+	public void printMatrix() {
+		int[][] matr = new int[m + 1][n + 1];
+		for (int i = 1; i < m; i++) {
+			for (int j = 1; j < n; j++) {
+				matr[i][j] = 0;
+			}
+		}
+		for (int i = 0; i < len; i++) {
+			matr[data[i].row][data[i].col] += data[i].e;
+		}
+		for (int i = 1; i <= m; i++) {
+			for (int j = 1; j <= n; j++) {
+				System.out.print(matr[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+}

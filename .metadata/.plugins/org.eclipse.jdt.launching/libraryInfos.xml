@@ -19,6 +19,25 @@
 <entry path="/home/hijj/software/javaAndroid/jdk/jdk8/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="D:\javaANDandroid\Java\jre" version="1.8.0_40">
+<bootpath>
+<entry path="D:\javaANDandroid\Java\jre\lib\resources.jar"/>
+<entry path="D:\javaANDandroid\Java\jre\lib\rt.jar"/>
+<entry path="D:\javaANDandroid\Java\jre\lib\sunrsasign.jar"/>
+<entry path="D:\javaANDandroid\Java\jre\lib\jsse.jar"/>
+<entry path="D:\javaANDandroid\Java\jre\lib\jce.jar"/>
+<entry path="D:\javaANDandroid\Java\jre\lib\charsets.jar"/>
+<entry path="D:\javaANDandroid\Java\jre\lib\jfr.jar"/>
+<entry path="D:\javaANDandroid\Java\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="D:\javaANDandroid\Java\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="D:\javaANDandroid\Java\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="D:\javaANDandroid\Java" version="1.8.0_40">
 <bootpath>
 <entry path="D:\javaANDandroid\Java\jre\lib\resources.jar"/>

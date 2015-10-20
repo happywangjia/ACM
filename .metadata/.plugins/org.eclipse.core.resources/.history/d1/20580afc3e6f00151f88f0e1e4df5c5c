@@ -1,8 +1,0 @@
-package leetcode;
-
-public class N12_Integer {
-	public String intToRoman(int num) {
-		
-		return null;
-	}
-}
