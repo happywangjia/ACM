@@ -1,0 +1,59 @@
+package learning.ks8;
+
+public class Tree {
+	private char data;
+	private Tree left;
+	private Tree right;
+	private Tree parent;
+	private boolean flagL;
+	private boolean flagR;
+	private int lNum;
+	private int rNum;
+	public Tree(){
+		this.left=null;
+		this.right=null;
+		this.parent=null;
+		this.flagL=false;
+		this.flagR=false;
+	}
+	public Tree(char data){
+		this();
+		this.data=data;
+	}
+	public Tree getParent() {
+		return parent;
+	}
+	public void setParent(Tree parent) {
+		this.parent = parent;
+	}
+	public char getData() {
+		return data;
+	}
+	public void setData(char data) {
+		this.data = data;
+	}
+	public Tree getLeft() {
+		return left;
+	}
+	public void setLeft(Tree left) {
+		this.left = left;
+	}
+	public Tree getRight() {
+		return right;
+	}
+	public void setRight(Tree right) {
+		this.right = right;
+	}
+	public boolean isFlagL() {
+		return flagL;
+	}
+	public void setFlagL(boolean flagL) {
+		this.flagL = flagL;
+	}
+	public boolean isFlagR() {
+		return flagR;
+	}
+	public void setFlagR(boolean flagR) {
+		this.flagR = flagR;
+	}
+}

@@ -1,0 +1,143 @@
+package learning.ks8;
+
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Set;
+
+public class MainTest {
+	private static final Scanner cin = new Scanner(System.in);
+	private static final HashMap<Character, Integer> priority = new HashMap<>();
+	private static final HashMap<Character, Integer> map = new HashMap<>();
+
+	public static void main(String[] args) {
+		init();
+		int n;
+		while (true) {
+			System.out.println("1:计算单个表达式");
+			System.out.println("2:合并");
+			System.out.println("3:退出");
+			n = cin.nextInt();
+			switch (n) {
+			case 1:
+				onlyOne();
+				break;
+			case 2:
+				break;
+			default:
+				return;
+			}
+		}
+	}
+
+	private static void init() {
+		priority.put('+', 1);
+		priority.put('-', 1);
+		priority.put('*', 2);
+		priority.put('/', 2);
+		priority.put('^', 3);
+	}
+
+	private static void onlyOne() {
+		System.out.println("输入前缀表达式：");
+		String str = cin.next();
+		Tree root = CreateTree(str);
+		if (root == null) {
+			System.out.println("表达式有误！");
+			System.exit(0);
+		}
+		//addKuo(root);
+		
+		bianLi(root);
+		System.out.println();
+	}
+	private static void addKuo(Tree root){
+		if(map.containsKey(root.getData())) return;
+		int k=priority.get(root.getData());
+		int pri1=0;
+		int pri2=0;
+		if(root.getLeft()!=null){
+			pri1=getPri(root.getLeft());
+		}
+		Tree left=root.getLeft();
+		if(pri1!=4&&(pri1>k)){
+			while(!map.containsKey(left)){
+				left=left.getLeft();
+			}
+			left.setFlagL(true);
+		}
+		if(root.getRight()!=null){
+			pri2=getPri(root.getRight());
+		}
+		Tree right=root.getRight();
+		if(pri2!=4&&(pri2>=k)){
+			
+		}
+	}
+	private static int getPri(Tree root){
+		
+		return 0;
+	}
+	
+	private static void bianLi(Tree root) {
+		if (root == null)
+			return;
+		if (root.getLeft() != null) {
+			bianLi(root.getLeft());
+		}
+		System.out.print(root.getData());
+		if (root.getRight() != null) {
+			bianLi(root.getRight());
+		}
+	}
+
+	private static Tree CreateTree(String str) {
+		for (int i = 0; i < str.length(); i++) {
+			if (priority.containsKey(str.charAt(i)) == false) {
+				if (map.containsKey(str.charAt(i)) == false) {
+					map.put(str.charAt(i), 0);
+				}
+			}
+		}
+//		Set<Character> kSet = map.keySet();
+//		java.util.Iterator<Character> it = kSet.iterator();
+//		while (it.hasNext()) {
+//			char ch = it.next();
+//			System.out.println("输入" + ch + "的值：");
+//			int k = cin.nextInt();
+//			map.replace(ch, k);
+//		}
+		Tree root = new Tree();
+		root.setData(str.charAt(0));
+		int d = 1;
+		while (d < str.length()) {
+			Tree temp = new Tree();
+			temp.setData(str.charAt(d));
+			if (root == null)
+				return null;
+			while (root != null && map.containsKey(root.getData())) {
+				root = root.getParent();
+			}
+			while (root != null && root.getLeft() != null && root.getRight() != null) {
+				root = root.getParent();
+			}
+			if (root.getLeft() == null) {
+				root.setLeft(temp);
+				temp.setParent(root);
+				root = root.getLeft();
+				d++;
+				continue;
+			}
+			if (root.getRight() == null) {
+				root.setRight(temp);
+				temp.setParent(root);
+				root = root.getRight();
+				d++;
+				continue;
+			}
+		}
+		while (root.getParent() != null) {
+			root = root.getParent();
+		}
+		return root;
+	}
+}

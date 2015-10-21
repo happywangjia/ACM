@@ -8,9 +8,9 @@
 		<item value="58" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.debug.ui.SCOPED_SAVE_SELECTION_DIALOG">
-		<item value="309" key="DIALOG_WIDTH"/>
-		<item value="1|Microsoft YaHei UI|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
-		<item value="414" key="DIALOG_HEIGHT"/>
+		<item value="334" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="437" key="DIALOG_HEIGHT"/>
 	</section>
 	<section name="org.eclipse.debug.ui.SELECT_LAUNCH_SHORTCUT_DIALOG">
 		<item value="270" key="DIALOG_WIDTH"/>
