@@ -1,0 +1,35 @@
+package learning.sk9;
+import java.util.Arrays;
+import java.util.Random;
+
+
+public class MainTest {
+	private static final int maxn=200;
+	private static int[]shu=new int[maxn+1];
+	private static int[] mpao;
+	private static int[] cru;
+	private static int[] xze;
+	private static int[] qsort;
+	private static int[] shell;
+	private static int[] hsort;
+	private static String path="";
+	
+	public static void main(String[] args){
+		for(int i=1;i<maxn;i++){
+			shu[i]=new Random().nextInt();
+		}
+		mpao=Arrays.copyOf(shu, shu.length);
+		cru=Arrays.copyOf(shu, shu.length);
+		xze=Arrays.copyOf(shu, shu.length);
+		qsort=Arrays.copyOf(shu, shu.length);
+		shell=Arrays.copyOf(shu, shu.length);
+		hsort=Arrays.copyOf(shu,shu.length);
+		SortTest.maopao(mpao);
+		SortTest.charu(cru);
+		SortTest.xuanze(xze);
+		
+		SortTest.shellSort(shell);
+		SortTest.heapSort(hsort);
+	}
+	
+}
