@@ -1,0 +1,16 @@
+package learnig.os1;
+
+public class PcbClass {
+	private String process;
+	private int priority;
+	private String arriveTime;
+	private String needTime;
+	private String CpuTime;
+	
+	
+	
+	
+}
+public enum Status{
+	RUNING,FINISH,BLOCK
+}

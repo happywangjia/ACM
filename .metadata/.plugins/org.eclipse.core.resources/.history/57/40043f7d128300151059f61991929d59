@@ -1,0 +1,74 @@
+package learnig.os1;
+
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+public class OsFirst {
+	private static Scanner cin = new Scanner(System.in);
+	private static List<PcbClass> list=new LinkedList<>();
+
+	public static void main(String[] args) {
+		int n;
+		System.out.println("1:先来先服务");
+		System.out.println("2:最高优先数优先");
+		n = cin.nextInt();
+		switch (n) {
+		case 1:
+			break;
+		case 2:
+			break;
+		default:
+			break;
+		}
+	}
+	public static void FCFS(){
+		list.clear();
+		System.out.println("请输入时间片：");
+		float timeSlice=cin.nextFloat();
+		System.out.println("请输入进程数：");
+		int n=cin.nextInt();
+		for(int i=0;i<n;i++){
+			String process=cin.next();
+			int priority=cin.nextInt();
+			float arriveTime=cin.nextFloat();
+			float needTime=cin.nextFloat();
+			PcbClass pcbClass=new PcbClass(process,priority,arriveTime,needTime);
+			list.add(pcbClass);
+		}
+		list.sort(new cmp<PcbClass>());
+		while(list.isEmpty()==false){
+			PcbClass pcb=list.get(0);
+			boolean flag=false;
+			pcb.setPriority(pcb.getPriority()-1);
+			if(pcb.getNeedTime()-pcb.getCpuTime()<=timeSlice){
+				pcb.setCpuTime(pcb.getNeedTime());
+				flag=true;
+			}else{
+				pcb.setCpuTime(pcb.getCpuTime()+timeSlice);
+			}
+			pcb.setProStatue(Statue.RUNING);
+			for(int i=0;i<list.size();i++){
+				PcbClass pcbTmp=list.get(i);
+				System.out.println("进程："+pcbTmp.getProcess()+"  优先级："+pcbTmp.getPriority()+1+"  到达时间："
+						+pcbTmp.getArriveTime()+"  需要时间："+pcbTmp.getNeedTime()+"  CPU时间："
+						+pcbTmp.getCpuTime()+"  进程状态："+pcbTmp.getProStatue());
+			}
+			System.out.println();
+			if(flag==false)
+				list.get(0).setProStatue(Statue.BLOCK);
+			else 
+				list.get(0).setProStatue(Statue.FINISH);
+		}
+	}
+	class cmp<PcbClass> implements Comparator<PcbClass>{
+		@Override
+		public int compare(PcbClass o1, PcbClass o2) {
+			if(o1.getPriority()>o2.getPriority()) return -1;
+			if(o1.getPriority()<o2.getPriority()) return 1;
+			return 0;
+		}
+		
+	}
+}

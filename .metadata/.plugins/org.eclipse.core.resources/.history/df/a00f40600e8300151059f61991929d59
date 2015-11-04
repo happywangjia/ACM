@@ -1,0 +1,51 @@
+package learnig.os1;
+
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class sss {
+	public static void main(String[] args){
+		List<Wj> list=new LinkedList<Wj>();
+		list.add(new Wj(2,4));
+		list.add(new Wj(3,5));
+		list.add(new Wj(1,4));
+		list.add(new Wj(3,6));
+		list.add(new Wj(3,2));
+		list.sort(new Comparator<Wj>() {
+
+			@Override
+			public int compare(Wj o1, Wj o2) {
+				if(o1.a>o2.a) return 1;
+				if(o1.a<o2.b) return -1;
+				return 0;
+			}
+		});
+		for(int i=0;i<list.size();i++){
+			System.out.println(list.get(i).a+"   "+list.get(i).b);
+		}
+		System.out.println("-----------------");
+		list.remove(3);
+		list.add(new Wj(3,6));
+//		list.sort(new Comparator<Wj>() {
+//
+//			@Override
+//			public int compare(Wj o1, Wj o2) {
+//				if(o1.a>o2.a) return 1;
+//				if(o1.a<o2.b) return -1;
+//				return 0;
+//			}
+//		});
+		for(int i=0;i<list.size();i++){
+			System.out.println(list.get(i).a+"   "+list.get(i).b);
+		}
+	}
+}
+class Wj{
+	int a;
+	int b;
+	public Wj(int a,int b){
+		this.a=a;
+		this.b=b;
+	}
+}

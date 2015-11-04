@@ -1,0 +1,17 @@
+package learnig.os1;
+
+public class PcbClass {
+	private String process;
+	private int priority;
+	private float arriveTime;
+	private float needTime;
+	private float CpuTime;
+	private Statue processStatue;
+	
+	
+	
+	
+}
+enum Statue{
+	RUNING,FINISH,BLOCK
+}

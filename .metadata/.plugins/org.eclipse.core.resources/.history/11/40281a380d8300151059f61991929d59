@@ -1,0 +1,20 @@
+package learnig.os1;
+
+import java.awt.List;
+
+public class sss {
+	public static void main(String[] args){
+		List<Wj> list=new List();
+		list.add(new WJ(2,4));
+		list.add(2);
+		list.add(1);
+	}
+}
+class WJ{
+	int a;
+	int b;
+	public WJ(int a,int b){
+		this.a=a;
+		this.b=b;
+	}
+}

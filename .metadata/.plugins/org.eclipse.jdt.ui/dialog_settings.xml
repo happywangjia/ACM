@@ -48,7 +48,7 @@
 		<item value="654" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="871" key="DIALOG_HEIGHT"/>
-		<item value="661" key="DIALOG_X_ORIGIN"/>
+		<item value="304" key="DIALOG_X_ORIGIN"/>
 		<item value="8" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">

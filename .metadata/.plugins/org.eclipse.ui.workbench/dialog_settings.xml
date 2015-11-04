@@ -24,6 +24,8 @@
 			<item value="D:\javaANDandroid\Java\zjava.epf"/>
 		</list>
 	</section>
+	<section name="NewWizardAction">
+	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.export.Preferences" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
 		<item value="org.eclipse.ui.wizards.import.Preferences" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>

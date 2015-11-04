@@ -1,0 +1,8 @@
+package learnig.os1;
+
+public class OsFirst {
+	public static void main(String[] args){
+		
+		
+	}
+}

@@ -1,0 +1,23 @@
+package learnig.os1;
+
+import java.util.Scanner;
+
+public class OsFirst {
+	private static Scanner cin = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		int n;
+		System.out.println("1:先来先服务");
+		System.out.println("2:最高优先数优先");
+		n = cin.nextInt();
+		switch (n) {
+		case 1:
+			break;
+		case 2:
+			break;
+		default:
+			break;
+		}
+
+	}
+}

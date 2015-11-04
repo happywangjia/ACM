@@ -1,0 +1,12 @@
+package learnig.os1;
+
+import java.awt.List;
+
+public class sss {
+	public static void main(String[] args){
+		List<Integer> list=new List();
+		list.add(3);
+		list.add(2);
+		list.add(1);
+	}
+}
