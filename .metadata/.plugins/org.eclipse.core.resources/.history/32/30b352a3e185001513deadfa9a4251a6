@@ -1,0 +1,19 @@
+package core_java_1;
+
+import java.io.File;
+import java.sql.Time;
+import java.util.Calendar;
+
+public class test1 {
+	public static void main(String[] args){
+		System.out.println(File.separator);
+		System.out.println(System.currentTimeMillis());
+		System.out.println(System.lineSeparator());
+		System.out.println(System.nanoTime());
+		Time time=new Time(System.currentTimeMillis());
+		System.out.println(time.getHours());
+		System.out.println(time.getMinutes());
+		System.out.prinltn(time.getSeconds());
+		System.out.println();
+	}
+}

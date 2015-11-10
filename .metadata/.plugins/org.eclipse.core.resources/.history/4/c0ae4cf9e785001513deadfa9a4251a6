@@ -1,0 +1,17 @@
+package corejava;
+
+public class java_textFile {
+	public static void main(String[] args){
+		
+	}
+}
+class Employee{
+	String name;
+	int salary;
+	int year;
+	int month;
+	int day;
+	public Employee(String name,int salary,int year,int month,int day){
+		
+	}
+}

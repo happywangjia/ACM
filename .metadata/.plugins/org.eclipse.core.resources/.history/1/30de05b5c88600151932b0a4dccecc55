@@ -1,0 +1,99 @@
+package learning.rzh1;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class rzh1 {
+	private static Scanner cin = new Scanner(System.in);
+	private static Stack<Integer> stack = new Stack<Integer>();
+	private static HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+	private static HashMap<Integer,String> map2=new HashMap<Integer,String>();
+
+	public static void main(String[] args) {
+		init();
+		int n;
+		while (cin.hasNext()) {
+			n = cin.nextInt();
+			stack.clear();
+			stack.push(1);
+			int tmp = 1;
+			if(n>3) return;
+			dfs(tmp,n);
+		}
+	}
+
+	public static void dfs(int tmp,int flag) {
+		if (tmp >= 5)
+			return;
+		for (int i = 2; i <= 5; i++) {
+			if (stack.contains(i))
+				continue;
+			if(flag==3&&i==3) continue; 
+			if (i == 2) {
+				if(flag==2||flag==3){
+					if(stack.contains(4)){
+						stack.push(i);
+						print();
+						stack.pop();
+					}
+					continue;
+				}else{
+					stack.push(i);
+					print();
+					stack.pop();
+					continue;
+				}
+			}
+			tmp++;
+			stack.push(i);
+			dfs(tmp,flag);
+			while(stack.size()>=tmp){
+				stack.pop();
+			}
+			tmp--;
+		}
+	}
+
+	private static void print() {
+		Iterator<Integer> iterator = stack.iterator();
+		int sum = 0;
+		int k1 = iterator.next();
+		System.out.print(map2.get(k1));
+		int k2;
+		while (iterator.hasNext()) {
+			k2 = iterator.next();
+			System.out.print("=>"+map2.get(k2));
+			int t1 = k1;
+			int t2 = k2;
+			if (t1 > t2) {
+				int yy = t1;
+				t1 = t2;
+				t2 = yy;
+			}
+			sum += map.get(t1 * 10 + t2);
+			k1 = k2;
+		}
+		System.out.println("总距离："+sum);
+	}
+
+	private static void init() {
+		map.put(12, 1165);
+		map.put(13, 1942);
+		map.put(14, 1511);
+		map.put(15, 2129);
+		map.put(23, 3179);
+		map.put(24, 1462);
+		map.put(25, 2677);
+		map.put(34, 2677);
+		map.put(35, 2216);
+		map.put(45, 1811);
+		map2.put(1, "西安");
+		map2.put(2, "北京");
+		map2.put(3,"昆明");
+		map2.put(4, "上海");
+		map2.put(5, "广州");
+	}
+
+}
