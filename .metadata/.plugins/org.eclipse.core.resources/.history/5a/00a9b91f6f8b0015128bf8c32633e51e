@@ -1,0 +1,12 @@
+package learning.bianyi4;
+
+public class NFA {
+	private int from;
+	private int to;
+	private String varch;
+	public NFA(int from,int to,String varch){
+		this.from=from;
+		this.to=to;
+		this.varch=varch;
+	}
+}

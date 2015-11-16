@@ -1,9 +1,0 @@
-package core_java_1;
-
-import java.io.File;
-
-public class test1 {
-	public void main(String[] args){
-		System.out.println(File.separator);
-	}
-}

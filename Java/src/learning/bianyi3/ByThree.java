@@ -8,12 +8,16 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class ByThree {
 	private static HashMap<String, tokClass> map = new HashMap<String, tokClass>();
 	private static HashMap<String,List<Integer>> hav=new HashMap<>();
+	private static HashMap<String,String> map3=new HashMap<>();
 	private static final String tokFile = "/media/hijj/娱乐/github/repositories/ACM/Java/src/learning/bianyi3/tok.txt";
 	private static final String sourceFile="/media/hijj/娱乐/github/repositories/ACM/Java/src/learning/bianyi3/Simple.txt";
 	private static final String tt1="/media/hijj/娱乐/github/repositories/ACM/Java/src/learning/bianyi3/sourceToken.txt";
@@ -75,7 +79,8 @@ public class ByThree {
 						}
 					}
 					if(flag==-1&&isDig(str[i].charAt(0))){
-						if(str[i].indexOf('.')!=0){
+						if(str[i].indexOf('.')!=-1){
+					//		System.out.println(str[i].indexOf('.'));
 							flag=4;
 							name="实常数";
 							tokenNum=53;
@@ -100,7 +105,9 @@ public class ByThree {
 						tokenNum=56;
 						name="标识符";
 					}
-					
+					if(map3.containsKey(str[i])==false){
+						map3.put(str[i], name);
+					}
 					br1.write(hanshu+"   "+str[i]+"   "+tokenNum+"\n");
 					br1.flush();
 					if(hav.containsKey(str[i])){
@@ -112,19 +119,34 @@ public class ByThree {
 						List<Integer> list=new LinkedList<>();
 						list.add(hanshu);
 						hav.put(str[i], list);
-						br2.write(hanshu+"  "+str[i]+"  "+str[i].length()+"  "+name+"  ");
-						for(int j=0;j<list.size();j++){
-							if(list.get(j)!=hanshu)
-								br2.write(list.get(j)+" ");
-						}
-						if(list.size()!=1){
-							System.out.println("行引用");
-						}
-						br2.write("\n");
-						br2.flush();
+//						br2.write(hanshu+"  "+str[i]+"  "+str[i].length()+"  "+name+"  ");
+//						for(int j=0;j<list.size();j++){
+//							if(list.get(j)!=hanshu)
+//								br2.write(list.get(j)+" ");
+//						}
+//						if(list.size()!=1){
+//							System.out.println("行引用");
+//						}
+//						br2.write("\n");
+//						br2.flush();
 					}
 				}
 			}
+			Set<String> set=hav.keySet();
+			Iterator<String> it=set.iterator();
+			while(it.hasNext()){
+				String str=it.next();
+				List<Integer> list=hav.get(str);
+				br2.write(list.get(0)+"  "+str+"  "+str.length()+"  "+map3.get(str)+"  ");
+				for(int kk=1;kk<list.size();kk++){
+					br2.write(list.get(kk)+"  ");
+				}
+				if(list.size()>1)
+					br2.write("行引用");
+				br2.write("\n");
+			}
+			br2.flush();
+			
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -166,7 +188,6 @@ public class ByThree {
 				tok.setLei(pri);
 				tok.setToke(Integer.parseInt(name[1]));
 				map.put(name[0], tok);
-//				System.out.println(pri+" "+name[0]+" "+name[1]);
 			}
 
 		} catch (FileNotFoundException e) {
