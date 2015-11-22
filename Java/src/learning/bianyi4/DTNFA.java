@@ -154,6 +154,8 @@ public class DTNFA {
 			} else if (jiao.equals("=")) {
 				if (st.equals("#")) {
 					System.out.println("finish!");
+					Wj wj=nowStack.pop();
+					System.out.println(" "+wj.getFrom()+" "+wj.getTo());
 				}
 				stack.pop();
 				kk++;
@@ -210,3 +212,4 @@ public class DTNFA {
 }
 // *(a|b).(a.b|b.b).*(a|b)#
 // *(a|b).(a.b|b.b).(a|b)#
+//*(a|b).(a.a|b.b).*(a|b)#

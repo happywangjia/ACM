@@ -1,0 +1,82 @@
+package learning.bianyi5;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+
+public class NTDFA {
+	private static List<NFA> list=new ArrayList<>();
+	private static Map<Character,Set<Integer>> map=new HashMap<>();
+	private static Stack<Character> stack=new Stack<>();
+	
+	public static void main(String[] args){
+		list=init();
+		
+	}
+	private static void NTD(){
+		int kk=0;
+		Set<Integer> ll=new HashSet<>();
+		ll=getStart(0,"&",ll);
+		ll.add(0);
+		if(ll.size()!=0){
+			map.put((char) ('A'+kk),ll);
+			stack.add((char) ('A'+kk));
+			kk++;
+		}
+		Set<Integer> ll2=new HashSet<>();
+		ll2=getStart(0,"a",ll2);
+		if(ll2.size()!=0){
+			stack.add((char) ('A'+kk));
+			map.put((char) ('A'+kk),ll2);
+			kk++;
+		}
+		Set<Integer> ll3=new HashSet<>();
+		ll3=getStart(0,"b",ll3);
+		if(ll3.size()!=0){
+			map.put((char) ('A'+kk), ll3);
+			stack.add((char) ('A'+kk));
+			kk++;
+		}
+		while(stack.empty()!=false){
+			Character ch=stack.pop();
+			Set<Integer> ll4=map.get(ch);
+			Set<Integer> ll5=new HashSet<>();
+			for(int i=0;i<ll4.size();i++){
+				
+			}
+			Set<Integer> set=new HashSet<>();
+		}
+		
+	}
+	
+	private static Set<Integer> getStart(int shu,String str,Set<Integer> ll){
+		char ch=' ';
+		for(int i=0;i<list.size();i++){
+			NFA nfa=list.get(i);
+			if(nfa.getFrom()==shu&&nfa.getVarch().equals(str)){
+				ll.add(nfa.getTo());
+			}
+		}
+		return ll;
+	}
+	private static List<NFA> init(){
+		list.clear();
+		list.add(new NFA(0,1,"&"));
+		list.add(new NFA(1,1,"a"));
+		list.add(new NFA(1,1,"b"));
+		list.add(new NFA(1,2,"&"));
+		list.add(new NFA(2,3,"a"));
+		list.add(new NFA(2,4,"b"));
+		list.add(new NFA(3,5,"a"));
+		list.add(new NFA(4,5,"b"));
+		list.add(new NFA(5,6,"&"));
+		list.add(new NFA(6,6,"a"));
+		list.add(new NFA(6,6,"b"));
+		list.add(new NFA(6,7,"&"));
+		return list;
+	}
+}
