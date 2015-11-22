@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MD5Util.java&apos; to &apos;Java/src/algorithms&apos;&#x0A;- Original project: &apos;Java&apos;&#x0A;- Destination element: &apos;Java/src/algorithms&apos;&#x0A;- Original element: &apos;core_java.mysql.MD5Util.java&apos;" description="Copy compilation unit" destination="/src&lt;algorithms" element1="/src&lt;core_java.mysql{MD5Util.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1448164522808" units="1" version="1.0"/>
+</session>

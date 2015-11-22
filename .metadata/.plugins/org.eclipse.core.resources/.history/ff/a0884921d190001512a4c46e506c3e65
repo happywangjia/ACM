@@ -1,0 +1,18 @@
+package algorithms;
+
+import java.io.ByteArrayOutputStream;
+
+public class Test {
+	public static void main(String[] args){
+		String s="王佳";
+		ByteArrayOutputStream bOut=new ByteArrayOutputStream();
+		Base64Util out=new Base64Util(bOut);
+		try{
+			out.write(s.getBytes());
+			out.flush();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		System.out.println(bOut.toString());
+	}
+}

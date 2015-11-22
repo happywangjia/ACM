@@ -1,0 +1,41 @@
+package core_java.mysql;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class test1 {
+	public static void main(String[] args) throws ClassNotFoundException{
+		Class.forName("com.mysql.jdbc.Driver");
+		String selSql="select * from ahu_uinfo";
+		
+		try {
+			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ahu","ahuname","password");
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery(selSql);
+			//System.out.println(rs.getRow());
+			while(rs.next()){
+				System.out.println(rs.getString("class"));
+			}
+			//rs.close();
+			String sql1="select name from ahu_uinfo where learn_num='E21314018'";
+			rs=stmt.executeQuery(sql1);
+			System.out.println(rs.next());
+			if(rs.next()){
+				
+			}
+			
+//			String sql2="insert into ahu_uinfo (learn_num,name,password,class) values"
+//					+ " ('wj','wangjia','"+MD5Util.MD5("123456")+"','软件工程');";
+//			boolean flag=stmt.execute(sql2);
+//			System.out.println(flag);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+	}
+}

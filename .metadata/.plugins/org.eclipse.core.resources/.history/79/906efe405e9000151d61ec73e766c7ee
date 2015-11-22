@@ -1,0 +1,5 @@
+package core_java.mysql;
+
+public class DatabaseMetaDataTest {
+
+}

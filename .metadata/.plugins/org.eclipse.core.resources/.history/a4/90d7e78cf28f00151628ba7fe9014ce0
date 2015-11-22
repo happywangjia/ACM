@@ -1,0 +1,23 @@
+package core_java.mysql;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ExecuteDML {
+	private String driver;
+	private String user;
+	private String url;
+	private String pass;
+	public void initParam(String paramFile) throws FileNotFoundException, IOException{
+		Properties prop=new Properties();
+		prop.load(new FileInputStream(paramFile));
+		driver=prop.getProperty("driver");
+		url=prop.getProperty("url");
+		user=prop.getProperty("user");
+		pass=prop.getProperty("pass");
+	}
+	
+
+}
