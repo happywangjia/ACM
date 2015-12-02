@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Properties"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="core_java.mysql.PrepareStatemenTest"/>
-<fullyQualifiedTypeName name="java.sql.CallableStatement"/>
 <fullyQualifiedTypeName name="java.sql.Types"/>
 <fullyQualifiedTypeName name="core_java.mysql.CallableStatementTest"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.CachedResultSetMetaData"/>
@@ -30,7 +26,6 @@
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.net.URLConnection"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
@@ -42,22 +37,27 @@
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="algorithms.Base64Util"/>
 <fullyQualifiedTypeName name="org.xml.sax.HandlerBase"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="learning.ks4.Stack"/>
-<fullyQualifiedTypeName name="java.util.Stack"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
-<fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="core_java.singleton.SingletonDemo2"/>
 <fullyQualifiedTypeName name="core_java.singleton.SingletonDemo3"/>
 <fullyQualifiedTypeName name="core_java.singleton.SingletonDemo4.SingletonClassInstance"/>
 <fullyQualifiedTypeName name="core_java.singleton.SingletonDemo4"/>
 <fullyQualifiedTypeName name="core_java.singleton.SingletonDemo1"/>
 <fullyQualifiedTypeName name="core_java.singleton.SingletonDemo5"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="learning.bianyi6.DFAH"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
 </qualifiedTypeNameHistroy>
