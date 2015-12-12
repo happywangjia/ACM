@@ -1,4 +1,4 @@
-package learning.bianyi6;
+//package learning.bianyi6;
 
 public class DFA {
 	private char var;
