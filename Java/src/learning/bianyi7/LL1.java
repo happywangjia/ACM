@@ -89,8 +89,7 @@ public class LL1 {
 		}
 		System.out.println(stack1 + "\t\t" + stack2);
 		while (stack1.lastElement() != '#' && stack2.lastElement() != '#') {
-			while (stack1.lastElement() == '&')
-				stack1.pop();
+			
 			char c1 = stack1.lastElement();
 			char c2 = stack2.lastElement();
 			if (c1 == c2) {
@@ -98,11 +97,19 @@ public class LL1 {
 				stack2.pop();
 			} else {
 				stack1.pop();
+				if(!fen.containsKey(c1+""+c2)){
+					System.out.println("error!");
+					return;
+				}
 				String strs = fen.get(c1 + "" + c2);
 				for (int i = strs.length() - 1; i >= 0; i--) {
 					stack1.push(strs.charAt(i));
 				}
 			}
+			while (stack1.lastElement() == '&')
+				stack1.pop();
+			while(stack2.lastElement()=='&')
+				stack2.pop();
 			System.out.println(stack1 + "\t\t" + stack2);
 		}
 
@@ -412,7 +419,7 @@ public class LL1 {
 /*
  * S->AB S->bC A->& A->b B->& B->aD C->AD C->b D->aS D->c
  * 
- * S->aH H->aMd|d M->Ab|& A->aM|e
+ * S->aH H->aMd|d M->Ab|& A->aM|e #
  * 
- * 
+ * aaabd
  */
